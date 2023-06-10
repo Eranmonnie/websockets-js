@@ -16,10 +16,11 @@ app.get('/', (req, res)=>{
     res.render('index');
 })
 
-io.on('connection', socket=>{
+io.on('connection', socket =>{
     console.log('connection set');
+    socket.emit('message', 'welcome to my chat app');
 })
 
 server.listen(PORT, ()=>{
-    console.log(`server started at port ${PORT}`);
+    console.log(`server started at port ${PORT}: http://localhost:3000/`);
 })
