@@ -1,0 +1,46 @@
+<%- include('./partials/layout.ejs') %>
+
+
+
+<div class=" max-w-md mx-auto pt-8">
+    <h1 class="uppercase font-bold pl-3 mb-2">Login</h1>
+    <div class="p-6 rounded-xl border border-gray-200">
+    
+    <form action="/login" method="POST" class="mx-auto mt-3">
+
+        <div class="mb-6">
+            <label 
+                for="userneme"
+                class="block mb-2 uppercase font-bold text-xs text-grey-700"
+            >
+            username
+            </label>
+            <input
+                type="text"
+                class="px-3 py-2 w-full border border-gray-200"
+                name="username"
+                id="username"
+             >
+
+        </div>
+        <div class="">
+            <label 
+                for="password"
+                class="block mb-2 uppercase font-bold text-xs text-grey-700"
+            >
+            password
+            </label>
+            <input
+                type="text"
+                class="px-3 py-2 w-full border border-gray-200"
+                name="password"
+                id="password"
+             >
+
+        </div>
+
+    </form>
+</div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
