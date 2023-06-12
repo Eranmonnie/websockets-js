@@ -37,7 +37,7 @@ io.on('connection', socket =>{
     //listen for client message 
     socket.on('chatMessage', messasge =>{
         io.emit('message' ,messasge);
-
+ 
     })
 })
 
