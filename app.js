@@ -33,6 +33,12 @@ io.on('connection', socket =>{
     socket.on('disconnect', () =>{
         io.emit('message', 'a user has disconnected');
     })
+
+    //listen for client message 
+    socket.on('chatMessage', messasge =>{
+        io.emit('message' ,messasge);
+
+    })
 })
 
 server.listen(PORT, ()=>{

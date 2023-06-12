@@ -1,8 +1,9 @@
 <%- include('./partials/layout.ejs') %>
 
     <div class="bg-gray-900 flex h-screen ">
-       <nav class=" w-2/5 " style="border-top: 1px solid gray; border-right: 1px solid gray; ">
-        <div class="w-full px-3 py-2 bg-gray-700 h-13">
+       <nav class=" w-2/5 " style="border-right: 1px solid gray; ">
+        <div class="w-full px-3 py-2 bg-gray-700 max-h-13">
+            <!-- where icons will be  -->
  Lorem ipsum dolor sit amet consectetur adipisicing 
         </div>
         <ul class="">
@@ -23,7 +24,8 @@
 
        <div class="w-full relative">
 
-        <div class="w-full px-3 py-2 bg-gray-700 h-13">
+        <div class="w-full px-3 py-2 bg-gray-700 max-h-13">
+            <!-- where users info will be  -->
             Lorem ipsum dolor sit amet consectetur adipisicing 
 
                    </div>
@@ -32,18 +34,28 @@
 
             </div>
             
-            <div class="absolute bottom-0 left-0 flex justify-center w-full  bg-gray-700 px-3 py-2">
-                <form action="#" class="w-4/5">
-                    <div>
+            <div class="absolute bottom-0 left-0 flex justify-center w-full  bg-gray-700 px-3 py-2 " >
+                <form id="form" class="w-4/5 flex items-center justify-between">
+                    <div class="w-full">
                             <input
                                 type="text"
-                                class="px-3 py-2 w-full border border-white rounded-full bg-gray-500"
+                                class="px-3 py-2 w-full rounded-full bg-gray-500"
+                                style="border: none; outline:none;"
                                 name="message"
-                                id="messaage"
+                                id="msg"
                             >
                 
                       
                     </div>
+
+                    <div class=" ml-3 flex justify-end">
+                        <button class="bg-blue-800 text-white uppercase rounded-full text-xs font-semibold px-3 py-2 hover:bg-blue-900 ">
+                            
+                            <%- include('./partials/sendsvg.ejs') %>
+
+                        </button>
+                    </div>
+            
                 </form>
             </div>
        </div>
