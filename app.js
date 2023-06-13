@@ -2,6 +2,8 @@ const path = require('path');
 const http = require('http');
 const websocket = require('socket.io');
 const express = require('express');
+const formatmessage = require('./utils/messageformatter')
+const botname = 'Chat bot';
 
 const app =  express();
 const server = http.createServer(app);
@@ -23,20 +25,20 @@ app.get('/chat', (req, res)=>{
 io.on('connection', socket =>{
    
     //welcome current user
-    socket.emit('message', 'welcome to my chat app');
+    socket.emit('message', formatmessage.formatMessage(botname, 'welcome to my chat app'));
 
     //show that a user has joined the chat but not the one connecting
-    socket.broadcast.emit('message', 'a user has joined the chat');
+    socket.broadcast.emit('message', formatmessage.formatMessage(botname, 'a user has joined the chat') );
 
     //run to tell everyone that a user has disconnected
 
     socket.on('disconnect', () =>{
-        io.emit('message', 'a user has disconnected');
+        io.emit('message', formatmessage.formatMessage(botname,  'a user has disconnected'));
     })
 
     //listen for client message 
     socket.on('chatMessage', messasge =>{
-        io.emit('message' ,messasge);
+        io.emit('message' ,formatmessage.formatMessage('dummyuser',  messasge));
  
     })
 })

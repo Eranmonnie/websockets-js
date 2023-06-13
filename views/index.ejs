@@ -1,7 +1,7 @@
 <%- include('./partials/layout.ejs') %>
 
-    <div class="bg-gray-900 flex h-screen ">
-       <nav class=" w-2/5 " style="border-right: 1px solid gray; ">
+    <div class="bg-gray-900 flex h-screen " style="overflow:hidden;">
+       <nav class=" w-2/5 " style="border-right: 1px solid gray; overflow-y: hidden;">
         <div class="w-full px-3 py-2 bg-gray-700 max-h-13">
             <!-- where icons will be  -->
  Lorem ipsum dolor sit amet consectetur adipisicing 
@@ -22,32 +22,24 @@
         </ul>
        </nav>
 
-       <div class="w-full relative">
+       <div class="w-full relative" style="overflow: auto;">
 
         <div class="w-full px-3 py-2 bg-gray-700 max-h-13">
             <!-- where users info will be  -->
             Lorem ipsum dolor sit amet consectetur adipisicing 
 
                    </div>
+           
+        
+            <div class="text mb-auto" id="message-box" style="overflow: auto; height:35.5em;"  >
 
-            <div class="text mb-auto" id="message-box">
-
-                <div class="flex justify-end mb-6" >
-                    <div class="bg-gray-500 px-3 py-2 rounded-full rounded-tr-none ">
-                        message i 2 3 4 5 
-                    </div>
-                </div>
-
-                <div class="flex justify-end mb-6">
-                    <div class="bg-gray-500 px-3 py-2 rounded-full rounded-tl-none">
-                        message i 2 3 4 5 
-                    </div>
-                </div>
-                
+        
+                <!-- messages go here   -->
 
             </div>
+
             
-            <div class="absolute bottom-0 left-0 flex justify-center w-full  bg-gray-700 px-3 py-2 " >
+            <div class=" flex justify-center w-full  bg-gray-700 px-3 py-2 " >
                 <form id="form" class="w-4/5 flex items-center justify-between">
                     <div class="w-full">
                             <input
@@ -60,17 +52,19 @@
                 
                       
                     </div>
-
+            
                     <div class=" ml-3 flex justify-end">
                         <button class="bg-blue-800 text-white uppercase rounded-full text-xs font-semibold px-3 py-2 hover:bg-blue-900 ">
                             
                             <%- include('./partials/sendsvg.ejs') %>
-
+            
                         </button>
                     </div>
             
                 </form>
             </div>
+           
+        
        </div>
     </div>
     
