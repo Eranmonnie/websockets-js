@@ -1,10 +1,25 @@
 const chatmessage = document.getElementById('message-box');
 
+
+// get user name and room from query string 
+const{username, room} = Qs.parse(location.search,
+    {
+        ignoreQueryPrefix:true
+    });
+
+
+//socket connection 
 const socket = io();
+
+ //log in to room
+ socket.emit('joinRoom', 
+ {
+  username,
+  room
+ } );
 
 socket.on('message', message =>{
 
-    console.log(message);
     addtodom(message);
         
    //scroll down 
