@@ -5,7 +5,7 @@ const chatmessage = document.getElementById('message-box');
 const{username, room} = Qs.parse(location.search,
     {
         ignoreQueryPrefix:true
-    });
+ });
 
 
 //socket connection 
@@ -17,6 +17,13 @@ const socket = io();
   username,
   room
  } );
+
+ //gat all users in rooms data 
+
+ socket.on('roomUsers', ({room,users}) =>{
+    
+
+ });
 
 socket.on('message', message =>{
 

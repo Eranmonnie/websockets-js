@@ -36,9 +36,17 @@ io.on('connection', socket =>{
 
         //welcome current user
         socket.emit('message', formatmessage.formatMessage(botname, `welcome ${user.username}`));
-
+        
         //show that a user has joined the chat but not the one connecting
         socket.broadcast.to(user.room).emit('message', formatmessage.formatMessage(botname, `${user.username} has joined the chat`) );
+
+        //retrieve users general data 
+        io.to(user.room).emit('roomUsers', {
+            room:user.room,
+            users: userstore.getRoomUsers(user.room),
+        });
+
+
 
     });
    
@@ -62,9 +70,16 @@ io.on('connection', socket =>{
 
             io.to(user.room).emit('message' ,formatmessage.formatMessage(botname,  `${user.username} has left the chat`));
 
+            io.to(user.room).emit('roomUsers', {
+                room:user.room,
+                users: userstore.getRoomUsers(user.room),
+            });
+
         }
 
     })
+
+
 
 });
 
