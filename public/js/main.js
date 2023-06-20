@@ -18,13 +18,14 @@ const socket = io();
   room
  } );
 
- //gat all users in rooms data 
+//  gat all users in rooms data 
 
- socket.on('roomUsers', ({room,users}) =>{
+ socket.on('roomUsers', ({room,users})=>{
     
-
+    outputRoom(room);
+    outputUsers(users);
  });
-
+ 
 socket.on('message', message =>{
 
     addtodom(message);
@@ -69,4 +70,17 @@ function addtodom(message){
     </div>`
 
     document.getElementById('message-box').appendChild(div);
+}
+
+
+function outputRoom(room){
+    const roomname = document.getElementById('roomname')
+    roomname.innerHTML = room;
+
+}
+function outputUsers(users){
+    const room = document.getElementById('users')
+    
+    room.innerHTML = `${users.map(user=>`<li class='mt-2 p-2'>${user.username}</li>`).join()}`
+    
 }
