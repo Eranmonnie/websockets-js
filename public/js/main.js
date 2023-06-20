@@ -81,6 +81,6 @@ function outputRoom(room){
 function outputUsers(users){
     const room = document.getElementById('users')
     
-    room.innerHTML = `${users.map(user=>`<li class='mt-2 p-2'>${user.username}</li>`).join()}`
+    room.innerHTML = `${users.map(user=>`<li class='mt-2 p-2'>${user.username}</li>`).join('')}`
     
 }
