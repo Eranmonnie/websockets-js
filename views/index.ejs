@@ -1,61 +1,54 @@
 <%- include('./partials/layout.ejs') %>
 
-    <div class="bg-gray-900 flex h-screen " style="overflow:hidden;">
-       <nav class=" w-1/5 " style="border-right: 1px solid gray; overflow-y: hidden;">
-        <div class="w-full px-3 py-2 bg-gray-700 max-h-13">
-            <!-- where icons will be  -->
- <span id="roomname"> </span>
-        </div>
-        <ul id="users" class="text-left p-2">
-            
-      
-        </ul>
-       </nav>
+<div class="h-full">
+  <nav
+    class="hidden md:block z-30 fixed md:w-[250px] md h-full bg-[#f8f9fa] mr-20"
+    style="border-right: 1px solid gray"
+  >
+    <div class="w-full px-3 py-2 bg-[#007bff] h-[6.1%]">
+      <!-- where icons will be  -->
 
-       <div class="w-full relative" style="overflow: auto;">
-
-        <div class="w-full px-3 py-2 bg-gray-700 max-h-13">
-            <!-- where users info will be  -->
-            Lorem ipsum dolor sit amet consectetur adipisicing 
-
-                   </div>
-           
-        
-            <div class="text mb-auto" id="message-box" style="overflow: auto; height:35.5em;"  >
-
-        
-                <!-- messages go here   -->
-
-            </div>
-
-            
-            <div class=" flex justify-center w-full  bg-gray-700 px-3 py-2 " >
-                <form id="form" class="w-4/5 flex items-center justify-between">
-                    <div class="w-full">
-                            <input
-                                type="text"
-                                class="px-3 py-2 w-full rounded-full bg-gray-500"
-                                style="border: none; outline:none;"
-                                name="message"
-                                id="msg"
-                            >
-                
-                      
-                    </div>
-            
-                    <div class=" ml-3 flex justify-end">
-                        <button class="bg-blue-800 text-white uppercase rounded-full text-xs font-semibold px-3 py-2 hover:bg-blue-900 ">
-                            
-                            <%- include('./partials/sendsvg.ejs') %>
-            
-                        </button>
-                    </div>
-            
-                </form>
-            </div>
-           
-        
-       </div>
+      <span id="roomname">
+        <!-- room name goes here -->
+      </span>
     </div>
-    
+    <ul id="users" class="text-left p-2">
+      <!-- room user info goes here -->
+    </ul>
+  </nav>
+
+  <div class="w-full h-full pl-[250px]">
+    <div class="w-full px-3 py-2 bg-[#007bff] h-[6.1%] text-white">
+      <!-- where users info will be  -->
+      General
+    </div>
+
+    <div class="text mb-auto h-[83.9%] overflow-y-auto p-[2%] bg-[#f8f9fa]" id="message-box">
+      <!-- messages go here   -->
+    </div>
+
+    <div class="flex justify-center w-full h-[10%] bg-[#007bff] px-3 py-2">
+      <form id="form" class="w-4/5 flex items-center justify-between">
+        <div class="w-full">
+          <input
+            type="text"
+            class="px-3 py-2 w-full rounded-full bg-[#ced4da]"
+            style="border: none; outline: none"
+            name="message"
+            id="msg"
+          />
+        </div>
+
+        <div class="ml-3 flex justify-end">
+          <button
+            class="bg-blue-800 text-white uppercase rounded-full text-xs font-semibold px-3 py-2 hover:bg-blue-900"
+          >
+            <%- include('./partials/sendsvg.ejs') %>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <%- include('./partials/footer.ejs') %>
